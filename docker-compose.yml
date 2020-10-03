@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  influxdb:
+    image: "influxdb:1.5.1"
+    ports:
+      - 8086:8086
+    volumes:
+      - etc/influxdb:/etc/influxdb
+      - tsm:/mnt/db/data
+      - wal:/mnt/influx/wal
+
+volumes:
+  tsm:
+  wal:
